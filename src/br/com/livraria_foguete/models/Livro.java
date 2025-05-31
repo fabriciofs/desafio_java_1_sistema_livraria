@@ -1,4 +1,4 @@
-package br.com.livraria_foguete.model;
+package br.com.livraria_foguete.models;
 
 public class Livro {
     String titulo;

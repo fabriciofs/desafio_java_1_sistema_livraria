@@ -1,4 +1,4 @@
-package br.com.livraria_foguete.model;
+package br.com.livraria_foguete.models;
 
 import java.time.LocalDate;
 
@@ -8,11 +8,19 @@ public class Movimento {
     Usuario usuario;
     LocalDate data;
 
-    public Movimento(TipoMovimento tipo, Livro livro, Usuario usuario, LocalDate data) {
+    public Movimento(TipoMovimento tipo, Livro livro, Usuario usuario) {
         this.tipo = tipo;
         this.livro = livro;
         this.usuario = usuario;
-        this.data = data;
+        this.data = LocalDate.now();
+    }
+
+    public Livro getLivro() {
+        return livro;
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
     }
 
     @Override
