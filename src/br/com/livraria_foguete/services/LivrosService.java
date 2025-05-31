@@ -8,18 +8,17 @@ public class LivrosService {
 
     ArrayList<Livro> livros;
 
-    public void adicionarLivro(String titulo, String autor, String genero, int anoPublicacao) {
-        Livro novoLivro = new Livro(titulo, autor, genero, anoPublicacao);
+    public ArrayList<Livro> getLivros() {
+        return livros;
+    }
+
+    public void adicionarLivro(String titulo, String autor, int anoPublicacao) {
+        Livro novoLivro = new Livro(titulo, autor, anoPublicacao);
         if (livros == null) {
             livros = new ArrayList<>();
         }
         livros.add(novoLivro);
-    }
-
-    public void removerLivro(Livro livro) {
-        if (livros != null) {
-            livros.remove(livro);
-        }
+        System.out.println("Livro cadastrado com sucesso: " + novoLivro);
     }
 
     public void listarLivros() {
@@ -31,5 +30,12 @@ public class LivrosService {
             Livro livro = livros.get(i);
             System.out.println("ID: " + i + " - " + livro);
         }
+    }
+
+    public Livro buscarLivroPorId(int id) {
+        if (livros == null || id < 0 || id >= livros.size()) {
+            return null;
+        }
+        return livros.get(id);
     }
 }

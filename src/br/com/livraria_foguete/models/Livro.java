@@ -3,14 +3,12 @@ package br.com.livraria_foguete.models;
 public class Livro {
     String titulo;
     String autor;
-    String editora;
     int anoPublicacao;
     StatusLivro status;
 
-    public Livro(String titulo, String autor, String editora, int anoPublicacao) {
+    public Livro(String titulo, String autor, int anoPublicacao) {
         this.titulo = titulo;
         this.autor = autor;
-        this.editora = editora;
         this.anoPublicacao = anoPublicacao;
         this.status = StatusLivro.DISPONIVEL;
     }
@@ -29,13 +27,6 @@ public class Livro {
 
     public void setAutor(String autor) {
         this.autor = autor;
-    }
-    public String getEditora() {
-        return editora;
-    }
-
-    public void setEditora(String editora) {
-        this.editora = editora;
     }
 
     public int getAnoPublicacao() {
@@ -59,7 +50,6 @@ public class Livro {
         return "Livro{" +
                 "titulo='" + titulo + '\'' +
                 ", autor='" + autor + '\'' +
-                ", editora='" + editora + '\'' +
                 ", anoPublicacao=" + anoPublicacao +
                 ", status=" + status +
                 '}';
